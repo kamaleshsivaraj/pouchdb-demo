@@ -1,0 +1,81 @@
+
+<div class="container">
+    
+    
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" >
+      <ng-template matStepLabel>Personal Details</ng-template>
+      
+      <h1>Add your Company details</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+      <form
+        [formGroup]="personalform"
+        >
+        <label class="form-label">Full Name</label>
+            <div class="mb-3">
+              <input type="text"
+              id="fullname"
+              formControlName="fullname"
+              >
+            </div>
+
+            <label  class="form-label">Gender</label>
+            <div class="mb-3 form-check">
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <div>
+                  <input id="male" type="radio" class="btn-check" value="male" name="gender" formControlName="gender">
+                  <label for="male" class="btn btn-outline-primary">Male</label>
+                </div>
+            
+              <div>
+                  <input id="female" type="radio" class="btn-check" value="female" name="gender" formControlName="gender">
+                  <label for="female" class="btn btn-outline-primary">Female</label>
+              </div>
+              <div>
+                <input id="other" type="radio" class="btn-check" value="other" name="gender" formControlName="gender">
+                <label for="other" class="btn btn-outline-primary">Other</label>
+            </div>
+              </div>
+            </div>
+            <label  class="form-label">Country</label>
+            <div class="mb-3">
+            <select class="custom-select"  formControlName="country">
+              <option value="" disabled>Choose your Country</option>
+              <option *ngFor="let country of Country" [ngValue]="country">{{country}}</option>
+            </select>
+            </div>
+
+            <label class="form-label">State</label>
+            <div class="mb-3">
+            <select class="custom-select" formControlName="state">
+              <option value="" disabled>Choose your State</option>
+              <option *ngFor="let state of State" [ngValue]="state">{{state}}</option>
+            </select>
+            </div>
+
+            <label class="form-label">Phone</label>
+            <div class="mb-3">
+              <input type="text"
+              id="phone"
+              formControlName="phone"
+              >
+            </div>
+            <button (click)="personaldetail()" matStepperNext  type="submit" mat-button>Next</button>
+          </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" >
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Company Details</ng-template>
+          <app-company-details></app-company-details>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Email Verification</ng-template>
+        <app-email-verify></app-email-verify>
+      <div>
+        <button mat-button (click)="stepper.reset()">check once</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

@@ -1,0 +1,44 @@
+<h1>Enter your OTP</h1>
+<p>For your security,we need to verify your identity. We sent 5-digit <br> code to <b>name@domain.com</b>. Please enter it below</p>
+
+<form
+[formGroup]="companyform"
+>
+<label class="form-label">Enter Your Code</label>
+    <div class="mb-3">
+      <input type="text"
+      id="companyname"
+      formControlName="companyname"
+      maxlength="1"
+      size="1"
+      >
+      <input type="text"
+      id="companyname"
+      formControlName="companyname"
+      maxlength="1"
+      size="1"
+      >
+      <input type="text"
+      id="companyname"
+      formControlName="companyname"
+      maxlength="1"
+      size="1"
+      >
+      <input type="text"
+      id="companyname"
+      formControlName="companyname"
+      maxlength="1"
+      size="1"
+      >
+      <input type="text"
+      id="companyname"
+      formControlName="companyname"
+      maxlength="1"
+      size="1"
+      >
+    </div>
+    <div>
+      <button (click)="companydetail()" mat-button matStepperPrevious>Back</button>
+      <button (click)="companydetail()" matStepperNext  type="submit" class="btn btn-primary">Verify</button>
+    </div>
+  </form>

@@ -1,0 +1,47 @@
+<h1>Add your Company details</h1>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+<form
+[formGroup]="companyform"
+>
+<label class="form-label">Company Name</label>
+    <div class="mb-3">
+      <input type="text"
+      id="companyname"
+      formControlName="companyname"
+      >
+    </div>
+
+      <label for="exampleInputEmail1">Email id</label>
+    <div class="mb-3">
+      <input type="email" formControlName="emailid" id="emialid" aria-describedby="emailHelp">
+    </div>
+
+    <label class="form-label">Job Title</label>
+    <div class="mb-3">
+      <input type="text"
+      id="jobtitle"
+      formControlName="jobtitle"
+      >
+    </div>
+    <label class="form-label">Years of Experience</label>
+    <div class="mb-3">
+      <input type="text"
+      id="yearofexperience"
+      formControlName="yearofexperience"
+      >
+    </div>
+    <div>
+      <div class="form-check">
+          <div>
+            <input id="agree" type="checkbox"
+            value="agree" name="agree" formControlName="termsconditions">
+            <p>I accept the <a href="http://T&C">Terms and Conditions</a></p>
+          </div>
+        </div>
+    </div>
+    <div>
+      <button (click)="companydetail()" mat-button matStepperPrevious>Back</button>
+      <button (click)="companydetail()" matStepperNext  type="submit" class="btn btn-primary">Send OTP</button>
+    </div>
+  </form>
